@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE WallsColumns[
+	<!ELEMENT WallsColumns       (Prefix,Postfix,Details,Columns,WallInfos,Walls)>
+
+	<!ELEMENT Columns			 (Column*)>
+	<!ELEMENT Walls				 (Wall*)>
+	<!ELEMENT Details			 (Detail*)>
+	<!ELEMENT WallInfos			 (WallInfo*)>
+
+	<!ELEMENT Detail			 (Name,Points)>
+	<!ELEMENT Column			 (Name,Point,IsMirror,Angle)>
+	<!ELEMENT Points			 (Point*)>
+	<!ELEMENT WallInfo			 (Name,Width)>
+	<!ELEMENT Wall				 (Name,Start,End)>
+
+	<!ELEMENT Prefix			 (#PCDATA)>
+	<!ELEMENT Postfix			 (#PCDATA)>
+	<!ELEMENT Name               (#PCDATA)>
+	<!ELEMENT Point              (#PCDATA)>
+	<!ELEMENT IsMirror           (#PCDATA)>
+	<!ELEMENT Angle              (#PCDATA)>
+	<!ELEMENT Start              (#PCDATA)>
+	<!ELEMENT End                (#PCDATA)>
+	<!ELEMENT Width              (#PCDATA)>
+]>
+<WallsColumns>
+	<Prefix></Prefix>
+	<Postfix></Postfix>
+	<Details></Details>
+	<Columns></Columns>
+	<WallInfos></WallInfos>
+	<Walls></Walls>
+</WallsColumns>

@@ -1,0 +1,43 @@
+﻿<local:ViewBase x:Class="LightningCAD.Views.LNumberView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LightningCAD.Views"
+             Title="快速编号">
+    <Grid Width="135">
+        <Label Content="前缀" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="prefix" HorizontalAlignment="Left" Margin="49,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
+
+        <Label Content="后缀" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="postfix" HorizontalAlignment="Left" Margin="49,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
+
+        <Label Content="样式" HorizontalAlignment="Left" Margin="11,70,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="49,72,0,0" VerticalAlignment="Top" Width="70" x:Name="type">
+            <ComboBoxItem Content="1,2,3..." IsSelected="True"/>
+            <ComboBoxItem Content="a,b,c..."/>
+            <ComboBoxItem Content="A,B,C..."/>
+        </ComboBox>
+
+        <Label Content="当前" HorizontalAlignment="Left" Margin="11,100,0,0" VerticalAlignment="Top"/>
+        <TextBox x:FieldModifier="public" x:Name="current" HorizontalAlignment="Left" Margin="49,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
+
+        <Label Content="字高" HorizontalAlignment="Left" Margin="11,130,0,0" VerticalAlignment="Top"/>
+        <TextBox x:FieldModifier="public" x:Name="textHeight"  Text="3.5" HorizontalAlignment="Left" Margin="50,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
+
+        <Label Content="边框" HorizontalAlignment="Left" Margin="12,158,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:FieldModifier="public" x:Name="border" HorizontalAlignment="Left" Margin="50,160,0,0" VerticalAlignment="Top" Width="70">
+            <ComboBoxItem Content="无" IsSelected="True"/>
+            <ComboBoxItem Content="圆形"/>
+            <ComboBoxItem Content="矩形"/>
+        </ComboBox>
+
+        <Label Content="引线" HorizontalAlignment="Left" Margin="12,188,0,10" VerticalAlignment="Top"/>
+        <ComboBox x:FieldModifier="public" x:Name="lead" HorizontalAlignment="Left" Margin="50,190,0,0" VerticalAlignment="Top" Width="70">
+            <ComboBoxItem Content="无" IsSelected="True"/>
+            <ComboBoxItem Content="有"/>
+        </ComboBox>
+
+        <Button Content="确定" HorizontalAlignment="Center" Margin="50,220,0,10" VerticalAlignment="Top" Width="50" Click="Button_Click"/>
+    </Grid>
+</local:ViewBase>

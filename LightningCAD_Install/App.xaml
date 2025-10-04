@@ -1,0 +1,9 @@
+﻿<Application x:Class="LightningCAD_Install.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LightningCAD_Install"
+             StartupUri="Install.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

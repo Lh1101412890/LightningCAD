@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{234510EA-28D9-4417-828C-E00BC2F318BC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LightningCAD</RootNamespace>
+    <AssemblyName>LightningCAD</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;C18</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;C18</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <DebugSymbols>true</DebugSymbols>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\LFVersion.cs" />
+    <Compile Include="Commands\LPInfo.cs" />
+    <Compile Include="Commands\LSSimilarly.cs" />
+    <Compile Include="Commands\LTJoin.cs" />
+    <Compile Include="Commands\LUNotes.cs" />
+    <Compile Include="Extension\CurveExtension.cs" />
+    <Compile Include="Extension\DatabaseExtension.cs" />
+    <Compile Include="Extension\DBOBjectExtension.cs" />
+    <Compile Include="Extension\DocumentExtension.cs" />
+    <Compile Include="Extension\EntityExtension.cs" />
+    <Compile Include="Extension\Extents2dExtension.cs" />
+    <Compile Include="Extension\Extents3dExtension.cs" />
+    <Compile Include="Extension\LineExtension.cs" />
+    <Compile Include="Extension\Point2dExtension.cs" />
+    <Compile Include="Extension\Point3dExtension.cs" />
+    <Compile Include="Extension\PolylineExtension.cs" />
+    <Compile Include="Extension\RibbonExtension.cs" />
+    <Compile Include="Commands\CommandBase.cs" />
+    <Compile Include="Commands\LBSwitch.cs" />
+    <Compile Include="Commands\LCFiles.cs" />
+    <Compile Include="Commands\LCGeometry.cs" />
+    <Compile Include="Commands\LCRefresh.cs" />
+    <Compile Include="Commands\LEClear.cs" />
+    <Compile Include="Commands\LElevation.cs" />
+    <Compile Include="Commands\LERefresh.cs" />
+    <Compile Include="Commands\LLTPolyline.cs" />
+    <Compile Include="Commands\LTExtract.cs" />
+    <Compile Include="Commands\LIPoints.cs" />
+    <Compile Include="Commands\LLibrary.cs" />
+    <Compile Include="Commands\LCoordinate.cs" />
+    <Compile Include="Commands\LOPoints.cs" />
+    <Compile Include="Commands\LPTPolyline.cs" />
+    <Compile Include="Commands\LSetting.cs" />
+    <Compile Include="Commands\LSFlash.cs" />
+    <Compile Include="Commands\LTMText.cs" />
+    <Compile Include="Commands\LTWipeout.cs" />
+    <Compile Include="Commands\LTAlign.cs" />
+    <Compile Include="Commands\Views.cs" />
+    <Compile Include="LightningExtension\ExceptionExtension.cs" />
+    <Compile Include="LightningExtension\LayerName.cs" />
+    <Compile Include="LightningExtension\LightningTolerance.cs" />
+    <Compile Include="LightningExtension\Tools.cs" />
+    <Compile Include="Models\DRBeamModels\ComponentBase.cs" />
+    <Compile Include="Models\DRBeamModels\ComponentColumn.cs" />
+    <Compile Include="Models\DRBeamModels\ComponentWall.cs" />
+    <Compile Include="Models\DRBeamModels\ComponentBeam.cs" />
+    <Compile Include="Models\DRColumnModel.cs" />
+    <Compile Include="Models\DRComponent.cs" />
+    <Compile Include="Models\ILFlash.cs" />
+    <Compile Include="Models\LFlash.cs" />
+    <Compile Include="Models\DRWallInfo.cs" />
+    <Compile Include="LightningApp.cs" />
+    <Compile Include="LightningExtension\ColorEnum.cs" />
+    <Compile Include="LightningExtension\Direction.cs" />
+    <Compile Include="Models\DragLine.cs" />
+    <Compile Include="Models\DragRectangle.cs" />
+    <Compile Include="LightningExtension\Information.cs" />
+    <Compile Include="LightningExtension\TextSpecialSymbol.cs" />
+    <Compile Include="Models\LineTypeUnit.cs" />
+    <Compile Include="Models\PrintInfo.cs" />
+    <Compile Include="Models\DRWallModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\DRBeamView.xaml.cs">
+      <DependentUpon>DRBeamView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DRWallColumnView.xaml.cs">
+      <DependentUpon>DRWallColumnView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KeyboardHook.cs" />
+    <Compile Include="Views\LBLineView.xaml.cs">
+      <DependentUpon>LBLineView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LBPrintInfoView.xaml.cs">
+      <DependentUpon>LBPrintInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LBPrintView.xaml.cs">
+      <DependentUpon>LBPrintView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LCLinetypeView.xaml.cs">
+      <DependentUpon>LCLinetypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LNumberView.xaml.cs">
+      <DependentUpon>LNumberView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PrintRecording.cs" />
+    <Compile Include="Views\LPJoinView.xaml.cs">
+      <DependentUpon>LPJoinView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LPSplitView.xaml.cs">
+      <DependentUpon>LPSplitView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\更新说明.docx">
+      <Link>更新说明.docx</Link>
+    </None>
+    <None Include="Models\Models.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\DRBeamView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DRWallColumnView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LBLineView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LBPrintInfoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LBPrintView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LCLinetypeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LNumberView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LPJoinView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LPSplitView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Lightning\Lightning\Lightning.csproj">
+      <Project>{4616756d-8fb0-4158-9a89-acf8fb85757d}</Project>
+      <Name>Lightning</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoCAD.NET" ExcludeAssets="runtime">
+      <Version>22.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="AutoCAD.NET.Interop" ExcludeAssets="runtime">
+      <Version>2018.22.0.49</Version>
+    </PackageReference>
+    <PackageReference Include="BouncyCastle">
+      <Version>1.8.9</Version>
+    </PackageReference>
+    <PackageReference Include="itext7">
+      <Version>7.1.19</Version>
+    </PackageReference>
+  </ItemGroup>
+</Project>

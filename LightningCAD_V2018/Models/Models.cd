@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LightningCAD.Models.PrintInfo" BaseTypeListCollapsed="true">
+    <Position X="1" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIEAAAAAAgAAAAGEAgAAAAAAIAAgABAAAAAEAAQg=</HashCode>
+      <FileName>Models\PrintInfo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LightningCAD.Models.DRComponent">
+    <Position X="5.75" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAoAEAQAgBAEBAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Models\DRComponent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LightningCAD.Models.DRWallModel">
+    <Position X="8.25" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAAABAAAAAQAABAAAAAEAAAAEAAAAIAAAAQBAQAAw=</HashCode>
+      <FileName>Models\DRWallModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LightningCAD.Models.DRColumnModel">
+    <Position X="5.75" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABEAAAAAAAABAAAAEAAAAAAAAAAIAAAAQ=</HashCode>
+      <FileName>Models\DRColumnModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LightningCAD.Models.DRWallInfo">
+    <Position X="10.5" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DRWallInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LightningCAD.Models.LFlash">
+    <Position X="3" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAAAAAAAAAAAAAgAAAAgAAAEAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Models\LFlash.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LightningCAD.Models.PrintRecording">
+    <Position X="1" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\PrintRecording.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LightningCAD.Models.DragLine">
+    <Position X="13.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAACAAAAAAAgAAAAAAAAAAAAAAAQAAAAAAAAACA=</HashCode>
+      <FileName>Models\DragLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LightningCAD.Models.DragRectangle">
+    <Position X="15.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAACA=</HashCode>
+      <FileName>Models\DragRectangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="LightningCAD.Models.ILFlashModel">
+    <Position X="1" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAgAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ILFlash.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

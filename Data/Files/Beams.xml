@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Beams[
+	<!ELEMENT Beams			         (Sizes,BeamModels)>
+
+	<!ELEMENT Sizes			         (Size*)>
+	<!ELEMENT BeamModels			 (BeamModel*)>
+	<!ELEMENT BeamModel			     (Start,End,Width,Height)>
+
+	<!ELEMENT Size                   (#PCDATA)>
+	<!ELEMENT Start			   	     (#PCDATA)>
+	<!ELEMENT End				     (#PCDATA)>
+	<!ELEMENT Width                  (#PCDATA)>
+	<!ELEMENT Height                 (#PCDATA)>
+]>
+
+<Beams>
+	<Sizes>
+
+	</Sizes>
+	<BeamModels>
+
+	</BeamModels>
+</Beams>

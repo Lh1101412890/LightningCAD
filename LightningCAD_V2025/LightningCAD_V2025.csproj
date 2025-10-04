@@ -1,0 +1,146 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>annotations</Nullable>
+		<OutputType>Library</OutputType>
+		<UseWindowsForms>True</UseWindowsForms>
+		<UseWPF>True</UseWPF>
+		<PlatformTarget>x64</PlatformTarget>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		<Platforms>x64</Platforms>
+		<RootNamespace>LightningCAD</RootNamespace>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<PackAsTool>False</PackAsTool>
+		<AnalysisLevel>latest</AnalysisLevel>
+		<ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+		<AssemblyName>LightningCAD</AssemblyName>
+		<NuGetAudit>True</NuGetAudit>
+		<SignAssembly>False</SignAssembly>
+		<SuppressIldasm>False</SuppressIldasm>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<Version>2.10.4</Version>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+		<DebugType>full</DebugType>
+		<DefineConstants>$(DefineConstants);C25</DefineConstants>
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+		<DebugType>full</DebugType>
+		<DefineConstants>$(DefineConstants);C25</DefineConstants>
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\LightningCAD_V2018\Commands\CommandBase.cs" Link="Commands\CommandBase.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LBSwitch.cs" Link="Commands\LBSwitch.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LCFiles.cs" Link="Commands\LCFiles.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LCGeometry.cs" Link="Commands\LCGeometry.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LCoordinate.cs" Link="Commands\LCoordinate.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LCRefresh.cs" Link="Commands\LCRefresh.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LEClear.cs" Link="Commands\LEClear.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LElevation.cs" Link="Commands\LElevation.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LERefresh.cs" Link="Commands\LERefresh.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LFVersion.cs" Link="Commands\LFVersion.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LIPoints.cs" Link="Commands\LIPoints.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LLibrary.cs" Link="Commands\LLibrary.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LLTPolyline.cs" Link="Commands\LLTPolyline.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LOPoints.cs" Link="Commands\LOPoints.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LPInfo.cs" Link="Commands\LPInfo.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LPTPolyline.cs" Link="Commands\LPTPolyline.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LSetting.cs" Link="Commands\LSetting.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LSFlash.cs" Link="Commands\LSFlash.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LSSimilarly.cs" Link="Commands\LSSimilarly.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LTAlign.cs" Link="Commands\LTAlign.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LTExtract.cs" Link="Commands\LTExtract.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LTJoin.cs" Link="Commands\LTJoin.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LTMText.cs" Link="Commands\LTMText.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LTWipeout.cs" Link="Commands\LTWipeout.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\LUNotes.cs" Link="Commands\LUNotes.cs" />
+		<Compile Include="..\LightningCAD_V2018\Commands\Views.cs" Link="Commands\Views.cs" />
+		<Compile Include="..\LightningCAD_V2018\Extension\CurveExtension.cs" Link="Extension\CurveExtension.cs" />
+		<Compile Include="..\LightningCAD_V2018\Extension\DatabaseExtension.cs" Link="Extension\DatabaseExtension.cs" />
+		<Compile Include="..\LightningCAD_V2018\Extension\DBOBjectExtension.cs" Link="Extension\DBOBjectExtension.cs" />
+		<Compile Include="..\LightningCAD_V2018\Extension\DocumentExtension.cs" Link="Extension\DocumentExtension.cs" />
+		<Compile Include="..\LightningCAD_V2018\Extension\EntityExtension.cs" Link="Extension\EntityExtension.cs" />
+		<Compile Include="..\LightningCAD_V2018\Extension\Extents2dExtension.cs" Link="Extension\Extents2dExtension.cs" />
+		<Compile Include="..\LightningCAD_V2018\Extension\Extents3dExtension.cs" Link="Extension\Extents3dExtension.cs" />
+		<Compile Include="..\LightningCAD_V2018\Extension\LineExtension.cs" Link="Extension\LineExtension.cs" />
+		<Compile Include="..\LightningCAD_V2018\Extension\Point2dExtension.cs" Link="Extension\Point2dExtension.cs" />
+		<Compile Include="..\LightningCAD_V2018\Extension\Point3dExtension.cs" Link="Extension\Point3dExtension.cs" />
+		<Compile Include="..\LightningCAD_V2018\Extension\PolylineExtension.cs" Link="Extension\PolylineExtension.cs" />
+		<Compile Include="..\LightningCAD_V2018\Extension\RibbonExtension.cs" Link="Extension\RibbonExtension.cs" />
+		<Compile Include="..\LightningCAD_V2018\LightningApp.cs" Link="LightningApp.cs" />
+		<Compile Include="..\LightningCAD_V2018\LightningExtension\ColorEnum.cs" Link="LightningExtension\ColorEnum.cs" />
+		<Compile Include="..\LightningCAD_V2018\LightningExtension\Direction.cs" Link="LightningExtension\Direction.cs" />
+		<Compile Include="..\LightningCAD_V2018\LightningExtension\ExceptionExtension.cs" Link="LightningExtension\ExceptionExtension.cs" />
+		<Compile Include="..\LightningCAD_V2018\LightningExtension\Information.cs" Link="LightningExtension\Information.cs" />
+		<Compile Include="..\LightningCAD_V2018\LightningExtension\LayerName.cs" Link="LightningExtension\LayerName.cs" />
+		<Compile Include="..\LightningCAD_V2018\LightningExtension\LightningTolerance.cs" Link="LightningExtension\LightningTolerance.cs" />
+		<Compile Include="..\LightningCAD_V2018\LightningExtension\TextSpecialSymbol.cs" Link="LightningExtension\TextSpecialSymbol.cs" />
+		<Compile Include="..\LightningCAD_V2018\LightningExtension\Tools.cs" Link="LightningExtension\Tools.cs" />
+		<Compile Include="..\LightningCAD_V2018\Models\DragLine.cs" Link="Models\DragLine.cs" />
+		<Compile Include="..\LightningCAD_V2018\Models\DragRectangle.cs" Link="Models\DragRectangle.cs" />
+		<Compile Include="..\LightningCAD_V2018\Models\DRBeamModels\ComponentBase.cs" Link="Models\DRBeamModels\ComponentBase.cs" />
+		<Compile Include="..\LightningCAD_V2018\Models\DRBeamModels\ComponentBeam.cs" Link="Models\DRBeamModels\ComponentBeam.cs" />
+		<Compile Include="..\LightningCAD_V2018\Models\DRBeamModels\ComponentColumn.cs" Link="Models\DRBeamModels\ComponentColumn.cs" />
+		<Compile Include="..\LightningCAD_V2018\Models\DRBeamModels\ComponentWall.cs" Link="Models\DRBeamModels\ComponentWall.cs" />
+		<Compile Include="..\LightningCAD_V2018\Models\DRColumnModel.cs" Link="Models\DRColumnModel.cs" />
+		<Compile Include="..\LightningCAD_V2018\Models\DRComponent.cs" Link="Models\DRComponent.cs" />
+		<Compile Include="..\LightningCAD_V2018\Models\DRWallInfo.cs" Link="Models\DRWallInfo.cs" />
+		<Compile Include="..\LightningCAD_V2018\Models\DRWallModel.cs" Link="Models\DRWallModel.cs" />
+		<Compile Include="..\LightningCAD_V2018\Models\ILFlash.cs" Link="Models\ILFlash.cs" />
+		<Compile Include="..\LightningCAD_V2018\Models\LFlash.cs" Link="Models\LFlash.cs" />
+		<Compile Include="..\LightningCAD_V2018\Models\LineTypeUnit.cs" Link="Models\LineTypeUnit.cs" />
+		<Compile Include="..\LightningCAD_V2018\Models\PrintInfo.cs" Link="Models\PrintInfo.cs" />
+		<Compile Include="..\LightningCAD_V2018\Models\PrintRecording.cs" Link="Models\PrintRecording.cs" />
+		<Compile Include="..\LightningCAD_V2018\Views\DRBeamView.xaml.cs" Link="Views\DRBeamView.xaml.cs" />
+		<Compile Include="..\LightningCAD_V2018\Views\DRWallColumnView.xaml.cs" Link="Views\DRWallColumnView.xaml.cs" />
+		<Compile Include="..\LightningCAD_V2018\Views\KeyboardHook.cs" Link="Views\KeyboardHook.cs" />
+		<Compile Include="..\LightningCAD_V2018\Views\LBLineView.xaml.cs" Link="Views\LBLineView.xaml.cs" />
+		<Compile Include="..\LightningCAD_V2018\Views\LBPrintInfoView.xaml.cs" Link="Views\LBPrintInfoView.xaml.cs" />
+		<Compile Include="..\LightningCAD_V2018\Views\LBPrintView.xaml.cs" Link="Views\LBPrintView.xaml.cs" />
+		<Compile Include="..\LightningCAD_V2018\Views\LCLinetypeView.xaml.cs" Link="Views\LCLinetypeView.xaml.cs" />
+		<Compile Include="..\LightningCAD_V2018\Views\LNumberView.xaml.cs" Link="Views\LNumberView.xaml.cs" />
+		<Compile Include="..\LightningCAD_V2018\Views\LPJoinView.xaml.cs" Link="Views\LPJoinView.xaml.cs" />
+		<Compile Include="..\LightningCAD_V2018\Views\LPSplitView.xaml.cs" Link="Views\LPSplitView.xaml.cs" />
+		<Compile Include="..\LightningCAD_V2018\Views\ViewBase.cs" Link="Views\ViewBase.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoCAD.NET" Version="25.0.1" ExcludeAssets="runtime" />
+		<PackageReference Include="AutoCAD.NET.Interop" Version="2025.25.0.58" ExcludeAssets="runtime" />
+		<PackageReference Include="itext" Version="9.2.0" />
+		<PackageReference Include="itext.bouncy-castle-adapter" Version="9.2.0" />
+		<PackageReference Include="System.Data.OleDb" Version="8.0.0" ExcludeAssets="runtime" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Commands\" />
+		<Folder Include="Extension\" />
+		<Folder Include="LightningExtension\" />
+		<Folder Include="Models\DRBeamModels\" />
+		<Folder Include="Views\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Page Include="..\LightningCAD_V2018\Views\DRBeamView.xaml" Link="Views\DRBeamView.xaml" />
+		<Page Include="..\LightningCAD_V2018\Views\DRWallColumnView.xaml" Link="Views\DRWallColumnView.xaml" />
+		<Page Include="..\LightningCAD_V2018\Views\LBLineView.xaml" Link="Views\LBLineView.xaml" />
+		<Page Include="..\LightningCAD_V2018\Views\LBPrintInfoView.xaml" Link="Views\LBPrintInfoView.xaml" />
+		<Page Include="..\LightningCAD_V2018\Views\LBPrintView.xaml" Link="Views\LBPrintView.xaml" />
+		<Page Include="..\LightningCAD_V2018\Views\LCLinetypeView.xaml" Link="Views\LCLinetypeView.xaml" />
+		<Page Include="..\LightningCAD_V2018\Views\LNumberView.xaml" Link="Views\LNumberView.xaml" />
+		<Page Include="..\LightningCAD_V2018\Views\LPJoinView.xaml" Link="Views\LPJoinView.xaml" />
+		<Page Include="..\LightningCAD_V2018\Views\LPSplitView.xaml" Link="Views\LPSplitView.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Lightning\Lightning\Lightning.csproj" />
+	</ItemGroup>
+
+</Project>

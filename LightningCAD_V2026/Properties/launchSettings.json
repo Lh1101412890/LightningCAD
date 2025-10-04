@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LightningCAD_V2026": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Autodesk\\AutoCAD 2026\\acad.exe"
+    }
+  }
+}

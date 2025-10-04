@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Prints[
+	<!ELEMENT Prints (Print*)>
+	<!ELEMENT Print (FileFullName,PrintModels)>
+	<!ELEMENT FileFullName   (#PCDATA)>
+	<!ELEMENT PrintModels (PrintModel*)>
+	<!ELEMENT PrintModel (Number,Size,Direction,LineWeight,Transparent,Style,Extents2d,Note)>
+	<!ELEMENT Number         (#PCDATA)>
+	<!ELEMENT Size           (#PCDATA)>
+	<!ELEMENT Direction      (#PCDATA)>
+	<!ELEMENT LineWeight     (#PCDATA)>
+	<!ELEMENT Transparent    (#PCDATA)>
+	<!ELEMENT Style          (#PCDATA)>
+	<!ELEMENT Extents2d      (#PCDATA)>
+	<!ELEMENT Note           (#PCDATA)>
+]>
+<Prints>
+
+</Prints>

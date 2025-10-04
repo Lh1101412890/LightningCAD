@@ -1,0 +1,98 @@
+﻿using System.Diagnostics;
+using System.IO;
+
+using Lightning.Manager;
+
+using Microsoft.Win32;
+
+namespace LightningCAD.LightningExtension
+{
+    public static class Information
+    {
+        static Information()
+        {
+            God = new God(GodEnum.CAD);
+        }
+        public static readonly God God;
+
+        /// <summary>
+        /// "Lightning"
+        /// </summary>
+        public static string Brand => God.Brand;
+
+        public static string ProductName => God.ProductName;
+
+        /// <summary>
+        /// 获取随包安装文件路径
+        /// </summary>
+        /// <param name="lastPath"></param>
+        /// <returns></returns>
+        public static FileInfo GetFileInfo(string lastPath) => God.GetFileInfo(lastPath);
+
+        /// <summary>
+        /// 软件版本，20**
+        /// </summary>
+        public static string Version =>
+#if C18
+                "2018";
+#elif C19
+                "2019";
+#elif C20
+                "2020";
+#elif C21
+                "2021";
+#elif C22
+                "2022";
+#elif C23
+                "2023";
+#elif C24
+                "2024";
+#elif C25
+                "2025";
+#elif C26
+                "2026";
+#endif
+
+        /// <summary>
+        /// 主模块文件
+        /// </summary>
+        public static FileInfo ProductModule
+        {
+            get
+            {
+                FileInfo fileInfo = null;
+                using (RegistryKey registry = Registry.LocalMachine.OpenSubKey($"Software\\Lightning\\{ProductName}"))
+                {
+                    if (registry != null)
+                    {
+                        string dirBase = registry.GetValue("Folder").ToString();
+                        string file = $"{dirBase}\\{Version}\\{ProductName}.dll";
+                        fileInfo = new FileInfo(file);
+                        registry.Close();
+                    }
+                    else
+                    {
+#if DEBUG
+                        string debug = "Debug";
+#else
+                        string debug = "Release";
+#endif
+
+#if C25
+                        fileInfo = new FileInfo($"D:\\Visual Studio 2022 Projects\\{ProductName}\\{ProductName}_V{Version}\\bin\\x64\\{debug}\\net8.0-windows8.0\\{ProductName}.dll");
+#else
+                        fileInfo = new FileInfo($"D:\\Visual Studio 2022 Projects\\{ProductName}\\{ProductName}_V{Version}\\bin\\x64\\{debug}\\{ProductName}.dll");
+#endif
+                    }
+                    return fileInfo;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 插件版本
+        /// </summary>
+        public static string ProductVersion => FileVersionInfo.GetVersionInfo(ProductModule.FullName).ProductVersion;
+
+    }
+}
