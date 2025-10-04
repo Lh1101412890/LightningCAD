@@ -15,6 +15,9 @@ namespace LightningCAD.LightningExtension
         }
         public static readonly God God;
 
+        // 项目位置
+        static readonly string local = "D:\\Visual Studio 2022 Projects";
+
         /// <summary>
         /// "Lightning"
         /// </summary>
@@ -79,9 +82,9 @@ namespace LightningCAD.LightningExtension
 #endif
 
 #if C25
-                        fileInfo = new FileInfo($"D:\\Visual Studio 2022 Projects\\{ProductName}\\{ProductName}_V{Version}\\bin\\x64\\{debug}\\net8.0-windows8.0\\{ProductName}.dll");
+                        fileInfo = new FileInfo(local + $"\\{ProductName}\\{ProductName}_V{Version}\\bin\\x64\\{debug}\\net8.0-windows8.0\\{ProductName}.dll");
 #else
-                        fileInfo = new FileInfo($"D:\\Visual Studio 2022 Projects\\{ProductName}\\{ProductName}_V{Version}\\bin\\x64\\{debug}\\{ProductName}.dll");
+                        fileInfo = new FileInfo(local + $"\\{ProductName}\\{ProductName}_V{Version}\\bin\\x64\\{debug}\\{ProductName}.dll");
 #endif
                     }
                     return fileInfo;

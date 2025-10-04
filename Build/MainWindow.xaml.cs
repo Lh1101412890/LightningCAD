@@ -29,32 +29,33 @@ namespace Build
                 Close();
                 return;
             }
-            string local = "";
+            // 项目位置
+            string local = "D:\\Visual Studio 2022 Projects";
             string product = "LightningCAD";
-            FileVersionInfo fileVersionInfo = FileVersionInfo.GetVersionInfo($"D:\\Visual Studio 2022 Projects\\{product}\\{product}_V2018\\bin\\x64\\Release\\{product}.dll");
+            FileVersionInfo fileVersionInfo = FileVersionInfo.GetVersionInfo(local + $"\\{product}\\{product}_V2018\\bin\\x64\\Release\\{product}.dll");
             //创建文件夹
-            DirectoryInfo cad = new($"D:\\Visual Studio 2022 Projects\\Products\\{product} {fileVersionInfo.ProductVersion}");
+            DirectoryInfo cad = new(local + $"\\Products\\{product} {fileVersionInfo.ProductVersion}");
             cad.Create();
 
             //复制Data文件夹
-            DirectoryInfo data = new($"D:\\Visual Studio 2022 Projects\\{product}\\Data");
+            DirectoryInfo data = new(local + $"\\{product}\\Data");
             DirectoryInfo ndata = new(cad.FullName + "\\" + "Data");
             ndata.Create();
             LTools.XCopy(data, ndata, "*", true);
 
             //复制安装程序
-            FileInfo setup = new($"D:\\Visual Studio 2022 Projects\\{product}\\{product}_Install\\bin\\x64\\Release\\Setup.exe");
+            FileInfo setup = new(local + $"\\{product}\\{product}_Install\\bin\\x64\\Release\\Setup.exe");
             setup.CopyTo(new FileInfo(cad.FullName + "\\" + setup.Name));
 
             //复制卸载程序
-            FileInfo uninstall = new($"D:\\Visual Studio 2022 Projects\\{product}\\{product}_Uninstall\\bin\\x64\\Release\\uninstall.exe");
+            FileInfo uninstall = new(local + $"\\{product}\\{product}_Uninstall\\bin\\x64\\Release\\uninstall.exe");
             uninstall.CopyTo(new FileInfo(ndata.FullName + "\\" + uninstall.Name));
 
             //复制2018-2024版本插件
             string[] strings1 = ["2018", "2019", "2020", "2021", "2022", "2023", "2024"];
             foreach (string s in strings1)
             {
-                DirectoryInfo directory = new($"D:\\Visual Studio 2022 Projects\\{product}\\{product}_V{s}\\bin\\x64\\Release");
+                DirectoryInfo directory = new(local + $"\\{product}\\{product}_V{s}\\bin\\x64\\Release");
                 DirectoryInfo nversion = new(ndata.FullName + "\\" + s);
                 nversion.Create();
                 LTools.XCopy(directory, nversion, ".dll", false);
@@ -64,7 +65,7 @@ namespace Build
             string[] strings2 = ["2025", "2026"];
             foreach (string s in strings2)
             {
-                DirectoryInfo directory = new($"D:\\Visual Studio 2022 Projects\\{product}\\{product}_V{s}\\bin\\x64\\Release\\net8.0-windows8.0");
+                DirectoryInfo directory = new(local + $"\\{product}\\{product}_V{s}\\bin\\x64\\Release\\net8.0-windows8.0");
                 DirectoryInfo nversion = new(ndata.FullName + "\\" + s);
                 nversion.Create();
                 LTools.XCopy(directory, nversion, ".dll", false);
