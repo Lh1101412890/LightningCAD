@@ -694,6 +694,7 @@ namespace LightningCAD.Views
                             numbers.Add(int.Parse(s));
                         }
                     }
+                    LightningApp.ShowMsg("关闭批量打印窗口可提前终止打印", 0, true);
                     for (int i = 0; i < numbers.Count; i++)
                     {
                         int n = numbers[i] - 1;
@@ -706,6 +707,7 @@ namespace LightningCAD.Views
                 }
                 else
                 {
+                    LightningApp.ShowMsg("关闭批量打印窗口可提前终止打印", 0, true);
                     for (int n = 0; n < PrintInfos.Count; n++)
                     {
                         string file = string.IsNullOrWhiteSpace(PrintInfos[n].Note)
@@ -715,6 +717,7 @@ namespace LightningCAD.Views
                         files.Add(file);
                     }
                 }
+                LightningApp.ShowMsg("", 0);
                 Close();
                 //合并为单个pdf文件
                 if (single.SelectedIndex == 0)
