@@ -29,6 +29,7 @@ namespace Build
                 Close();
                 return;
             }
+            string local = "";
             string product = "LightningCAD";
             FileVersionInfo fileVersionInfo = FileVersionInfo.GetVersionInfo($"D:\\Visual Studio 2022 Projects\\{product}\\{product}_V2018\\bin\\x64\\Release\\{product}.dll");
             //创建文件夹
