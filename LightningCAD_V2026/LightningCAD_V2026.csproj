@@ -36,6 +36,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<Folder Include="Commands\" />
+		<Folder Include="Extension\" />
+		<Folder Include="LightningExtension\" />
+		<Folder Include="Models\" />
+		<Folder Include="Views\" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Compile Include="..\LightningCAD_V2018\Commands\CommandBase.cs" Link="Commands\CommandBase.cs" />
 		<Compile Include="..\LightningCAD_V2018\Commands\LBSwitch.cs" Link="Commands\LBSwitch.cs" />
 		<Compile Include="..\LightningCAD_V2018\Commands\LCFiles.cs" Link="Commands\LCFiles.cs" />
