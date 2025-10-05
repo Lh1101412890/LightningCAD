@@ -56,8 +56,9 @@ namespace Build
             foreach (string s in strings1)
             {
                 DirectoryInfo directory = new(local + $"\\{product}\\{product}_V{s}\\bin\\x64\\Release");
-                DirectoryInfo nversion = new(ndata.FullName + "\\" + s);
-                nversion.Create();
+                DirectoryInfo nversion = new(cad.FullName + "\\dll\\" + s);
+                if (!nversion.Exists)
+                    nversion.Create();
                 LTools.XCopy(directory, nversion, ".dll", false);
             }
 
@@ -66,8 +67,9 @@ namespace Build
             foreach (string s in strings2)
             {
                 DirectoryInfo directory = new(local + $"\\{product}\\{product}_V{s}\\bin\\x64\\Release\\net8.0-windows8.0");
-                DirectoryInfo nversion = new(ndata.FullName + "\\" + s);
-                nversion.Create();
+                DirectoryInfo nversion = new(cad.FullName + "\\dll\\" + s);
+                if (!nversion.Exists)
+                    nversion.Create();
                 LTools.XCopy(directory, nversion, ".dll", false);
             }
 
