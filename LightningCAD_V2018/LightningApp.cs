@@ -39,7 +39,8 @@ namespace LightningCAD
 
         public void Initialize()
         {
-            ShowMsg("LightningCAD插件作者：【不要干施工】，点击去b站充电，插件群：785371506！", 25);
+            if (!God.IsGod)
+                ShowMsg("LightningCAD插件作者：【不要干施工】，点击去b站充电，插件群：785371506！", 25);
 
             // 事件存在就不会被其他插件初始化删掉（此事件会打开多次）
             ComponentManager.ItemInitialized += LRibbon_ItemInitialized;
