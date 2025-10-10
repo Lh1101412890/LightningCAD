@@ -9,6 +9,7 @@ using Autodesk.AutoCAD.Runtime;
 
 using Lightning.Extension;
 
+using LightningCAD.Extension;
 using LightningCAD.LightningExtension;
 
 using CADApp = Autodesk.AutoCAD.ApplicationServices.Application;
@@ -97,7 +98,7 @@ namespace LightningCAD.Commands
             }
             catch (System.Exception exp)
             {
-                exp.Record();
+                exp.LogTo(Information.God);
             }
         }
 
@@ -119,7 +120,7 @@ namespace LightningCAD.Commands
                         catch (System.Exception exp)
                         {
                             paths.Add(file.FullName);
-                            exp.Record();
+                            exp.LogTo(Information.God);
                             continue;
                         }
                         string ver;
@@ -171,7 +172,7 @@ namespace LightningCAD.Commands
                         catch (System.Exception exp)
                         {
                             paths.Add(file.FullName);
-                            exp.Record();
+                            exp.LogTo(Information.God);
                             continue;
                         }
                         string ver;

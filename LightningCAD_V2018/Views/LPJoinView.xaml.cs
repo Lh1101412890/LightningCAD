@@ -7,6 +7,7 @@ using System.Windows.Controls;
 
 using Lightning.Extension;
 
+using LightningCAD.Extension;
 using LightningCAD.LightningExtension;
 
 using Button = System.Windows.Controls.Button;
@@ -178,15 +179,15 @@ namespace LightningCAD.Views
                 Process.Start("Explorer", "/select," + file);
                 Close();
             }
-            catch (IOException ex)
+            catch (IOException exp)
             {
-                if (ex.HResult == -2147024864)
+                if (exp.HResult == -2147024864)
                 {
-                    MessageBox.Show(ex.Message, "错误", MessageBoxButton.OK);
+                    MessageBox.Show(exp.Message, "错误", MessageBoxButton.OK);
                 }
                 else
                 {
-                    ex.Record();
+                    exp.LogTo(Information.God);
                     MessageBoxResult messageBoxResult = MessageBox.Show("合并失败，请联系up主（QQ：1101412890），\n是否定位至错误文件？", "错误", MessageBoxButton.YesNo, MessageBoxImage.Error);
                     if (messageBoxResult == MessageBoxResult.Yes)
                     {
@@ -194,9 +195,9 @@ namespace LightningCAD.Views
                     }
                 }
             }
-            catch (System.Exception ex)
+            catch (System.Exception exp)
             {
-                ex.Record();
+                exp.LogTo(Information.God);
                 MessageBoxResult messageBoxResult = MessageBox.Show("合并失败，请联系up主（QQ：1101412890），\n是否定位至错误文件？", "错误", MessageBoxButton.YesNo, MessageBoxImage.Error);
                 if (messageBoxResult == MessageBoxResult.Yes)
                 {

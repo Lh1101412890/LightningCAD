@@ -220,7 +220,7 @@ namespace LightningCAD.Commands
                 {
                     if (exp.Message == "未在本地计算机上注册“Microsoft.ACE.OLEDB.12.0”提供程序。")
                     {
-                        exp.Record();
+                        exp.LogTo(Information.God);
                         return;
                     }
                 }
@@ -256,7 +256,7 @@ namespace LightningCAD.Commands
             }
             catch (System.Exception exp)
             {
-                exp.Record();
+                exp.LogTo(Information.God);
             }
         }
 

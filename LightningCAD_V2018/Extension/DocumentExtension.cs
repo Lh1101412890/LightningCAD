@@ -28,7 +28,7 @@ namespace LightningCAD.Extension
             }
             catch (Autodesk.AutoCAD.Runtime.Exception exp)
             {
-                exp.Record();
+                exp.LogTo(Information.God);
             }
         }
 

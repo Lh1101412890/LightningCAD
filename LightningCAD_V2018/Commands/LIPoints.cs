@@ -158,7 +158,7 @@ namespace LightningCAD.Commands
             }
             catch (System.Exception exp)
             {
-                exp.Record();
+                exp.LogTo(Information.God);
             }
         }
     }

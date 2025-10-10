@@ -429,7 +429,7 @@ namespace LightningCAD.Views
             }
             catch (System.Exception exp)
             {
-                exp.Record();
+                exp.LogTo(Information.God);
             }
         }
         private void PlaneModify_Click(object sender, RoutedEventArgs e)
@@ -803,7 +803,7 @@ namespace LightningCAD.Views
             }
             catch (Exception exp)
             {
-                exp.Record();
+                exp.LogTo(Information.God);
             }
         }
         /// <summary>
@@ -1050,7 +1050,7 @@ namespace LightningCAD.Views
             }
             catch (Exception exp)
             {
-                exp.Record();
+                exp.LogTo(Information.God);
             }
         }
 
@@ -1186,9 +1186,9 @@ namespace LightningCAD.Views
                 editor.WriteMessage($"大样识别共 {ColumnDetails.Count} 个，有 {invalids.Count} 个识别无效：\n{str}\n");
 
             }
-            catch (Exception ex)
+            catch (Exception exp)
             {
-                ex.Record();
+                exp.LogTo(Information.God);
             }
         }
         private void DetailModify_Click(object sender, RoutedEventArgs e)
@@ -1347,7 +1347,7 @@ namespace LightningCAD.Views
             }
             catch (Exception exp)
             {
-                exp.Record();
+                exp.LogTo(Information.God);
             }
         }
         private void WallInfoAdd_Click(object sender, RoutedEventArgs e)

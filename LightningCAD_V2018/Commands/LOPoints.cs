@@ -112,7 +112,7 @@ namespace LightningCAD.Commands
                     else
                     {
                         editor.WriteMessage("IO异常\n");
-                        exp.Record();
+                        exp.LogTo(Information.God);
                         return;
                     }
                 }
@@ -176,7 +176,7 @@ namespace LightningCAD.Commands
             }
             catch (System.Exception exp)
             {
-                exp.Record();
+                exp.LogTo(Information.God);
             }
         }
     }

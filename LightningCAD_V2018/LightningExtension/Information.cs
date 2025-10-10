@@ -9,11 +9,7 @@ namespace LightningCAD.LightningExtension
 {
     public static class Information
     {
-        static Information()
-        {
-            God = new God(GodEnum.CAD);
-        }
-        public static readonly God God;
+        internal static God God = new God(GodEnum.CAD);
 
         // 项目位置
         static readonly string local = "D:\\Visual Studio 2022 Projects";
@@ -76,15 +72,15 @@ namespace LightningCAD.LightningExtension
                     else
                     {
 #if DEBUG
-                        string debug = "Debug";
+                        string ver = "Debug";
 #else
-                        string debug = "Release";
+                        string ver = "Release";
 #endif
 
-#if C25
-                        fileInfo = new FileInfo(local + $"\\{ProductName}\\{ProductName}_V{Version}\\bin\\x64\\{debug}\\net8.0-windows8.0\\{ProductName}.dll");
+#if C25 || C26
+                        fileInfo = new FileInfo($"{local}\\{ProductName}\\{ProductName}_V{Version}\\bin\\x64\\{ver}\\net8.0-windows8.0\\{ProductName}.dll");
 #else
-                        fileInfo = new FileInfo(local + $"\\{ProductName}\\{ProductName}_V{Version}\\bin\\x64\\{debug}\\{ProductName}.dll");
+                        fileInfo = new FileInfo($"{local}\\{ProductName}\\{ProductName}_V{Version}\\bin\\x64\\{ver}\\{ProductName}.dll");
 #endif
                     }
                     return fileInfo;

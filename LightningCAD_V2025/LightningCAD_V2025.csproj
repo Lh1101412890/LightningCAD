@@ -85,7 +85,6 @@
 		<Compile Include="..\LightningCAD_V2018\LightningApp.cs" Link="LightningApp.cs" />
 		<Compile Include="..\LightningCAD_V2018\LightningExtension\ColorEnum.cs" Link="LightningExtension\ColorEnum.cs" />
 		<Compile Include="..\LightningCAD_V2018\LightningExtension\Direction.cs" Link="LightningExtension\Direction.cs" />
-		<Compile Include="..\LightningCAD_V2018\LightningExtension\ExceptionExtension.cs" Link="LightningExtension\ExceptionExtension.cs" />
 		<Compile Include="..\LightningCAD_V2018\LightningExtension\Information.cs" Link="LightningExtension\Information.cs" />
 		<Compile Include="..\LightningCAD_V2018\LightningExtension\LayerName.cs" Link="LightningExtension\LayerName.cs" />
 		<Compile Include="..\LightningCAD_V2018\LightningExtension\LightningTolerance.cs" Link="LightningExtension\LightningTolerance.cs" />

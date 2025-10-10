@@ -737,7 +737,7 @@ namespace LightningCAD.Views
             }
             catch (Exception exp)
             {
-                exp.Record();
+                exp.LogTo(Information.God);
             }
         }
 
@@ -1100,7 +1100,7 @@ namespace LightningCAD.Views
             }
             catch (Exception exp)
             {
-                exp.Record();
+                exp.LogTo(Information.God);
             }
         }
 
@@ -1120,7 +1120,7 @@ namespace LightningCAD.Views
                 }
                 catch (Exception exp)
                 {
-                    exp.Record();
+                    exp.LogTo(Information.God);
                     return;
                 }
                 using (Transaction tr = libDatabase.NewTransaction())
@@ -1156,7 +1156,7 @@ namespace LightningCAD.Views
                     {
                         tr.Abort();
                         editor.WriteMessage("未找到打印范围框\n");
-                        exp.Record();
+                        exp.LogTo(Information.God);
                         return;
                     }
                     objectIdCollection.Add(blockReference.ObjectId);

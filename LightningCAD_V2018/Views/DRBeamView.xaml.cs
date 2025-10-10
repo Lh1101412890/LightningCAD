@@ -159,7 +159,7 @@ namespace LightningCAD.Views
                 }
                 catch (Autodesk.AutoCAD.Runtime.Exception ex)
                 {
-                    ex.Record();
+                    ex.LogTo(Information.God);
                 }
             }
         }
@@ -269,9 +269,9 @@ namespace LightningCAD.Views
                     }
                 }
             }
-            catch (Autodesk.AutoCAD.Runtime.Exception ex)
+            catch (Autodesk.AutoCAD.Runtime.Exception exp)
             {
-                ex.Record();
+                exp.LogTo(Information.God);
             }
             Hiddens.Clear();
         }
@@ -304,9 +304,9 @@ namespace LightningCAD.Views
                     }
                 }
             }
-            catch (Autodesk.AutoCAD.Runtime.Exception ex)
+            catch (Autodesk.AutoCAD.Runtime.Exception exp)
             {
-                ex.Record();
+                exp.LogTo(Information.God);
             }
         }
 

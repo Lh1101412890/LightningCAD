@@ -73,7 +73,7 @@ namespace LightningCAD.Commands
                             else
                             {
                                 editor.WriteMessage(exp.Message + "\n");
-                                exp.Record();
+                                exp.LogTo(Information.God);
                             }
                             tr.Abort();
                             break;
@@ -93,7 +93,7 @@ namespace LightningCAD.Commands
             }
             catch (System.Exception exp)
             {
-                exp.Record();
+                exp.LogTo(Information.God);
             }
         }
     }

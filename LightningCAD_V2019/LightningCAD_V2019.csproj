@@ -189,9 +189,6 @@
     <Compile Include="..\LightningCAD_V2018\LightningExtension\Direction.cs">
       <Link>LightningExtension\Direction.cs</Link>
     </Compile>
-    <Compile Include="..\LightningCAD_V2018\LightningExtension\ExceptionExtension.cs">
-      <Link>LightningExtension\ExceptionExtension.cs</Link>
-    </Compile>
     <Compile Include="..\LightningCAD_V2018\LightningExtension\Information.cs">
       <Link>LightningExtension\Information.cs</Link>
     </Compile>

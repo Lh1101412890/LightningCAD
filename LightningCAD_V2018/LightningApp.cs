@@ -74,9 +74,9 @@ namespace LightningCAD
                     FileInfo fileInfo = new FileInfo(e.Document.Name);
                     Dir = fileInfo.DirectoryName;
                 }
-                catch (System.Exception ex)
+                catch (System.Exception exp)
                 {
-                    ex.Record();
+                    exp.LogTo(Information.God);
                 }
             }
         }

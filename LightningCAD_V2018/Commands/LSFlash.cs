@@ -8,6 +8,7 @@ using Autodesk.Windows;
 
 using Lightning.Extension;
 
+using LightningCAD.Extension;
 using LightningCAD.LightningExtension;
 
 using CADApp = Autodesk.AutoCAD.ApplicationServices.Application;
@@ -94,7 +95,7 @@ namespace LightningCAD.Commands
             }
             catch (System.Exception exp)
             {
-                exp.Record();
+                exp.LogTo(Information.God);
             }
         }
 

@@ -6,6 +6,8 @@ using Autodesk.AutoCAD.Geometry;
 
 using iText.Kernel.Pdf;
 
+using Lightning.Extension;
+
 using LightningCAD.Extension;
 
 namespace LightningCAD.LightningExtension
@@ -256,9 +258,9 @@ namespace LightningCAD.LightningExtension
                     writer.Close();
                 }
             }
-            catch (System.Exception ex)
+            catch (System.Exception exp)
             {
-                ex.Record();
+                exp.LogTo(Information.God);
             }
         }
 
@@ -288,9 +290,9 @@ namespace LightningCAD.LightningExtension
                     }
                 }
             }
-            catch (System.Exception ex)
+            catch (System.Exception exp)
             {
-                ex.Record();
+                exp.LogTo(Information.God);
             }
             finally
             {

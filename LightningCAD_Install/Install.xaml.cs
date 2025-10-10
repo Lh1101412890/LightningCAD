@@ -361,7 +361,7 @@ namespace LightningCAD_Install
                         CopyDir(dll, directoryInfo);
                     }
 
-                    //卸载程序注册表信息
+                    //卸载程序
                     using (RegistryKey registry = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall", true))
                     {
                         using (RegistryKey key = registry.CreateSubKey(Product, true))

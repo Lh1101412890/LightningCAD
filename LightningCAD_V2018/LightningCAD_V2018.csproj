@@ -104,7 +104,6 @@
     <Compile Include="Commands\LTWipeout.cs" />
     <Compile Include="Commands\LTAlign.cs" />
     <Compile Include="Commands\Views.cs" />
-    <Compile Include="LightningExtension\ExceptionExtension.cs" />
     <Compile Include="LightningExtension\LayerName.cs" />
     <Compile Include="LightningExtension\LightningTolerance.cs" />
     <Compile Include="LightningExtension\Tools.cs" />
