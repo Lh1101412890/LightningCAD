@@ -8,6 +8,7 @@ using Autodesk.AutoCAD.Runtime;
 using Autodesk.Windows;
 
 using Lightning.Extension;
+using Lightning.Information;
 using Lightning.Manager;
 
 using LightningCAD;
@@ -31,6 +32,7 @@ namespace LightningCAD
         /// <param name="time">显示时长</param>
         /// <param name="always">是否一直显示</param>
         public static void ShowMsg(string msg, int time = 0, bool always = false) => Information.God.ShowMessage(msg, time, always);
+        private static bool IsGod => PCInfo.IsGod;
 
         /// <summary>
         /// CAD工作目录，第一个打开文档所在的目录，会在此处生成打印日志文件
@@ -39,7 +41,7 @@ namespace LightningCAD
 
         public void Initialize()
         {
-            if (!God.IsGod)
+            if (!IsGod)
                 ShowMsg("LightningCAD插件作者：【不要干施工】，点击去b站充电，插件群：785371506！", 25);
 
             // 事件存在就不会被其他插件初始化删掉（此事件会打开多次）
@@ -61,7 +63,7 @@ namespace LightningCAD
                     editor.WriteMessage("视图目标点已重置为原点\n");
                 }
             }
-            if (God.IsGod)
+            if (IsGod)
             {
                 LSetting.Command();
             }

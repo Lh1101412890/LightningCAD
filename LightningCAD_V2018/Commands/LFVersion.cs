@@ -26,7 +26,6 @@ namespace LightningCAD.Commands
             {
                 Document document = CADApp.DocumentManager.MdiActiveDocument;
                 editor = document.Editor;
-                // 用户确认坐标数据精度(小数位数)
                 PromptKeywordOptions versionKey = new PromptKeywordOptions("请选择目标版本[2004(1)/2007(2)/2010(3)/2013(4)/放弃(U)]")
                 {
                     AppendKeywordsToMessage = true,
@@ -67,7 +66,6 @@ namespace LightningCAD.Commands
                 };
                 if (folder.ShowDialog() != DialogResult.OK) { return; }
 
-                // 用户确认坐标数据精度(小数位数)
                 PromptKeywordOptions deepthKey = new PromptKeywordOptions("是否转换所有子文件夹中的文件[是(Y)/否(N)/放弃(U)]")
                 {
                     AppendKeywordsToMessage = true,
