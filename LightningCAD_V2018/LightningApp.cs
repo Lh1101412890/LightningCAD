@@ -32,6 +32,7 @@ namespace LightningCAD
         /// <param name="time">显示时长</param>
         /// <param name="always">是否一直显示</param>
         public static void ShowMsg(string msg, int time = 0, bool always = false) => Information.God.ShowMessage(msg, time, always);
+
         private static bool IsGod => PCInfo.IsGod;
 
         /// <summary>
@@ -42,7 +43,7 @@ namespace LightningCAD
         public void Initialize()
         {
             if (!IsGod)
-                ShowMsg("LightningCAD插件作者：【不要干施工】，点击去b站充电，插件群：785371506！", 25);
+                ShowMsg("Lightning插件作者：【不要干施工】，点击去b站充电，插件群：785371506！", 25);
 
             // 事件存在就不会被其他插件初始化删掉（此事件会打开多次）
             ComponentManager.ItemInitialized += LRibbon_ItemInitialized;
