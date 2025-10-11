@@ -7,7 +7,6 @@ using System.Windows.Controls;
 
 using Lightning.Extension;
 
-using LightningCAD.Extension;
 using LightningCAD.LightningExtension;
 
 using Button = System.Windows.Controls.Button;

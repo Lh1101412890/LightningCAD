@@ -7,7 +7,6 @@ using Autodesk.AutoCAD.DatabaseServices;
 using Autodesk.AutoCAD.EditorInput;
 
 using Lightning.Extension;
-using Lightning.Manager;
 
 using LightningCAD.Extension;
 using LightningCAD.LightningExtension;

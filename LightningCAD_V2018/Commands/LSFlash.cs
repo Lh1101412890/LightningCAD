@@ -8,7 +8,6 @@ using Autodesk.Windows;
 
 using Lightning.Extension;
 
-using LightningCAD.Extension;
 using LightningCAD.LightningExtension;
 
 using CADApp = Autodesk.AutoCAD.ApplicationServices.Application;

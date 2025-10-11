@@ -5,8 +5,6 @@ using Autodesk.AutoCAD.DatabaseServices;
 using Autodesk.AutoCAD.EditorInput;
 using Autodesk.AutoCAD.Geometry;
 
-using Lightning.Extension;
-
 using LightningCAD.Commands;
 using LightningCAD.Extension;
 using LightningCAD.LightningExtension;

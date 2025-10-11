@@ -15,7 +15,7 @@ namespace LightningCAD.Commands
         {
             AcadPreferences preferences = (AcadPreferences)CADApp.Preferences;
             uint now = preferences.Display.GraphicsWinModelBackgrndColor;
-            
+
             //16进制的RGB颜色值，前两位为00，然后是R、G、B值
             if (now == 0x00000000)
             {

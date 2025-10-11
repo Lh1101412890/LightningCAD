@@ -9,7 +9,6 @@ using Autodesk.AutoCAD.Runtime;
 
 using Lightning.Extension;
 
-using LightningCAD.Extension;
 using LightningCAD.LightningExtension;
 
 using CADApp = Autodesk.AutoCAD.ApplicationServices.Application;

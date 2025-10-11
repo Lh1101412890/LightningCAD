@@ -9,7 +9,6 @@ using Autodesk.Windows;
 
 using Lightning.Extension;
 using Lightning.Information;
-using Lightning.Manager;
 
 using LightningCAD;
 using LightningCAD.Commands;
