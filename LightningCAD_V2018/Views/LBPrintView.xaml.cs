@@ -650,7 +650,7 @@ namespace LightningCAD.Views
                 string name = string.IsNullOrEmpty(fileName.Text) ? "Lightning批量打印" : fileName.Text;
                 if (!IsValid(name))
                 {
-                    MessageBox.Show("文件名不能包含\\/:*?\"<>|这些特殊字符！", "警告", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    LightningApp.ShowMsg("文件名不能包含\\/:*?\"<>|这些特殊字符！", 3);
                     return;
                 }
                 DirectoryInfo directory = new DirectoryInfo($"{myDocument}\\Lightning\\LightningCAD\\批量打印");
@@ -672,7 +672,7 @@ namespace LightningCAD.Views
                     {
                         if ((c < 48 || c > 57) && c != ',' && c != '-')
                         {
-                            MessageBox.Show("自定义范围有误！");
+                            LightningApp.ShowMsg("自定义范围有误！", 3);
                         }
                     }
                     string[] strings = text.Split(',');

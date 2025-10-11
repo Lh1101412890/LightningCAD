@@ -155,7 +155,7 @@ namespace LightningCAD.Views
                     }
                     else
                     {
-                        MessageBox.Show("该名称已存在！");
+                        LightningApp.ShowMsg("该名称已存在！", 3);
                     }
                     transaction.Commit();
                 }

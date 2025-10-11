@@ -63,7 +63,7 @@ namespace LightningCAD.Commands
                 }
                 catch (OleDbException)
                 {
-                    MessageBox.Show("该文件已经被其他用户以独占方式打开，或者您没有查看和写入其数据的权限。", "文件打开失败", MessageBoxButton.OK, MessageBoxImage.Error);
+                    LightningApp.ShowMsg("该文件已经被其他用户以独占方式打开，或者您没有查看和写入其数据的权限。", 3);
                     connection.Dispose(); return;
                 }
                 System.Data.DataTable dataTable = connection.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
