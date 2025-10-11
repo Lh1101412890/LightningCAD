@@ -361,9 +361,10 @@ namespace LightningCAD_Install
                         CopyDir(dll, directoryInfo);
                     }
 
-                    //卸载程序
+                    //先删除卸载程序再重新添加
                     using (RegistryKey registry = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall", true))
                     {
+                        registry.DeleteSubKeyTree(Product, false);
                         using (RegistryKey key = registry.CreateSubKey(Product, true))
                         {
                             key.SetValue("DisplayIcon", $"{target.FullName}\\Lightning.ico", RegistryValueKind.String);//图标
