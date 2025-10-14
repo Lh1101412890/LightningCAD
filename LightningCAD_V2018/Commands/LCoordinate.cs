@@ -52,15 +52,15 @@ namespace LightningCAD.Commands
                     start = temp;
                 }
 
-                DragLine class1 = new DragLine(start, "指定标注位置");
+                DragLine dragLine = new DragLine(start, "指定标注位置");
 
-                PromptResult promptResult = editor.Drag(class1);
+                PromptResult promptResult = editor.Drag(dragLine);
                 if (promptResult.Status != PromptStatus.OK)
                 {
                     return;
                 }
 
-                Point3d end = class1.end;
+                Point3d end = dragLine.end;
 
                 double x;
                 double y;
