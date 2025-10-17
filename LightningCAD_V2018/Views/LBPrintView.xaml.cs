@@ -694,6 +694,7 @@ namespace LightningCAD.Views
                             numbers.Add(int.Parse(s));
                         }
                     }
+                    grid.IsEnabled = false;
                     LightningApp.ShowMsg("关闭批量打印窗口可提前终止打印", 0, true);
                     for (int i = 0; i < numbers.Count; i++)
                     {
@@ -707,6 +708,7 @@ namespace LightningCAD.Views
                 }
                 else
                 {
+                    grid.IsEnabled = false;
                     LightningApp.ShowMsg("关闭批量打印窗口可提前终止打印", 0, true);
                     for (int n = 0; n < PrintInfos.Count; n++)
                     {

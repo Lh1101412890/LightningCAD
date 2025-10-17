@@ -6,7 +6,7 @@
              xmlns:core="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:LightningCAD.Views"
              Title="批量打印" MinWidth="280" MinHeight="140">
-    <Grid>
+    <Grid x:Name="grid">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="25"></RowDefinition>
