@@ -4,7 +4,10 @@ using System.IO;
 
 using Autodesk.AutoCAD.Runtime;
 
+using Lightning.Information;
+
 using CADApp = Autodesk.AutoCAD.ApplicationServices.Application;
+
 namespace LightningCAD.Commands
 {
     /// <summary>
@@ -29,10 +32,7 @@ namespace LightningCAD.Commands
             string cadProduct = CADApp.GetSystemVariable("PRODUCT").ToString();
             string cadExe = CADApp.GetSystemVariable("ACADVER").ToString();
 
-            // 获取桌面路径
-            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            string file = Path.Combine(desktopPath, "运行环境信息.txt");
+            string file = Path.Combine(PCInfo.MyDocumentsDirectoryInfo.FullName, "运行环境信息.txt");
 
             // 输出信息
             File.WriteAllText(file,

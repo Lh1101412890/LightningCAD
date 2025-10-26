@@ -107,7 +107,6 @@
 		<Compile Include="..\LightningCAD_V2018\Models\PrintRecording.cs" Link="Models\PrintRecording.cs" />
 		<Compile Include="..\LightningCAD_V2018\Views\DRBeamView.xaml.cs" Link="Views\DRBeamView.xaml.cs" />
 		<Compile Include="..\LightningCAD_V2018\Views\DRWallColumnView.xaml.cs" Link="Views\DRWallColumnView.xaml.cs" />
-		<Compile Include="..\LightningCAD_V2018\Views\KeyboardHook.cs" Link="Views\KeyboardHook.cs" />
 		<Compile Include="..\LightningCAD_V2018\Views\LBLineView.xaml.cs" Link="Views\LBLineView.xaml.cs" />
 		<Compile Include="..\LightningCAD_V2018\Views\LBPrintInfoView.xaml.cs" Link="Views\LBPrintInfoView.xaml.cs" />
 		<Compile Include="..\LightningCAD_V2018\Views\LBPrintView.xaml.cs" Link="Views\LBPrintView.xaml.cs" />

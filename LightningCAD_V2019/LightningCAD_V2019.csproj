@@ -260,9 +260,6 @@
       <Link>Views\DRWallColumnView.xaml.cs</Link>
       <DependentUpon>DRWallColumnView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\LightningCAD_V2018\Views\KeyboardHook.cs">
-      <Link>Views\KeyboardHook.cs</Link>
-    </Compile>
     <Compile Include="..\LightningCAD_V2018\Views\LBLineView.xaml.cs">
       <Link>Views\LBLineView.xaml.cs</Link>
       <DependentUpon>LBLineView.xaml</DependentUpon>

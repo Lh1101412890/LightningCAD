@@ -133,7 +133,6 @@
     <Compile Include="Views\DRWallColumnView.xaml.cs">
       <DependentUpon>DRWallColumnView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\KeyboardHook.cs" />
     <Compile Include="Views\LBLineView.xaml.cs">
       <DependentUpon>LBLineView.xaml</DependentUpon>
     </Compile>
