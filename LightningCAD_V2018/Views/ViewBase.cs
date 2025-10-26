@@ -28,8 +28,6 @@ namespace LightningCAD.Views
             WindowStartupLocation = WindowStartupLocation.Manual;
             SizeToContent = SizeToContent.WidthAndHeight;
 
-            StartListen();
-
             SourceInitialized += ViewBase_SourceInitialized;
             Activated += ViewBase_Activated;
             Closed += ViewBase_Closed;
@@ -42,15 +40,12 @@ namespace LightningCAD.Views
             CADApp.DocumentManager.DocumentActivated += DocumentManager_DocumentActivated;
             CADApp.DocumentManager.DocumentActivationChanged += DocumentManager_DocumentActivationChanged;
             document.BeginDocumentClose += Document_BeginDocumentClose;
+
+            StartListen();
         }
 
-        #region 自动切换回原文档窗口
-        /// <summary>
-        /// 打开窗口时自动切换回原文档
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DocumentManager_DocumentActivated(object sender, DocumentCollectionEventArgs e)
+        // 激活其他文档时自动切换回原文档
+        private void KeepCurrentDocument()
         {
             Document doc = CADApp.DocumentManager.MdiActiveDocument;
             if (doc == null || !doc.Equals(document))
@@ -67,35 +62,10 @@ namespace LightningCAD.Views
                 LightningApp.ShowMsg("命令窗口激活时禁止切换文档", 3);
             }
         }
-        /// <summary>
-        /// 打开窗口时自动切换回原文档
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DocumentManager_DocumentActivationChanged(object sender, DocumentActivationChangedEventArgs e)
-        {
-            Document doc = CADApp.DocumentManager.MdiActiveDocument;
-            if (doc == null || !doc.Equals(document))
-            {
-                //跳回到打开窗口时的文档
-                foreach (var item in CADApp.DocumentWindowCollection)
-                {
-                    if (item is Autodesk.AutoCAD.Windows.DrawingDocumentWindow window && window.Document.Equals(document))
-                    {
-                        window.Activate();
-                        break;
-                    }
-                }
-                LightningApp.ShowMsg("命令窗口激活时禁止切换文档", 3);
-            }
-        }
-        #endregion
+        private void DocumentManager_DocumentActivated(object sender, DocumentCollectionEventArgs e) => KeepCurrentDocument();
+        private void DocumentManager_DocumentActivationChanged(object sender, DocumentActivationChangedEventArgs e) => KeepCurrentDocument();
 
-        /// <summary>
-        /// 文档即将关闭时先关闭窗口，避免异常
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        // 文档即将关闭时先关闭窗口，避免异常
         private void Document_BeginDocumentClose(object sender, DocumentBeginCloseEventArgs e)
         {
             Close();
@@ -105,9 +75,9 @@ namespace LightningCAD.Views
         {
             document.CancelCommand();
             this.SetLocation(Information.God);
-            StopListen();
             CADApp.DocumentManager.DocumentActivationChanged -= DocumentManager_DocumentActivationChanged;
             CADApp.DocumentManager.DocumentActivated -= DocumentManager_DocumentActivated;
+            StopListen();
         }
         private void ViewBase_SourceInitialized(object sender, EventArgs e)
         {
@@ -120,11 +90,8 @@ namespace LightningCAD.Views
             CADApp.MainWindow.Handle.Focus();
             Activated -= ViewBase_Activated;
         }
-        private void ViewBase_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
-        {
-            //鼠标离开窗口时，焦点切回CAD
-            CADApp.MainWindow.Handle.Focus();
-        }
+        //鼠标离开窗口时，焦点切回CAD
+        private void ViewBase_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e) => CADApp.MainWindow.Handle.Focus();
 
         public void StartListen()
         {
@@ -137,10 +104,8 @@ namespace LightningCAD.Views
             k_hook.KeyDownEvent -= myKeyEventHandeler;//取消按键事件
             k_hook.Stop();
         }
-
         private KeyEventHandler myKeyEventHandeler;//按键钩子事件处理器
         private readonly KeyboardHook k_hook = new KeyboardHook();
-
         private void Hook_KeyDown(object sender, KeyEventArgs e)
         {
             //Alt + `关闭窗口
