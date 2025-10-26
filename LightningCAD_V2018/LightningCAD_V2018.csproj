@@ -106,7 +106,7 @@
     <Compile Include="Commands\Views.cs" />
     <Compile Include="LightningExtension\LayerName.cs" />
     <Compile Include="LightningExtension\LightningTolerance.cs" />
-    <Compile Include="LightningExtension\Tools.cs" />
+    <Compile Include="LightningExtension\PDFHelper.cs" />
     <Compile Include="Models\DRBeamModels\ComponentBase.cs" />
     <Compile Include="Models\DRBeamModels\ComponentColumn.cs" />
     <Compile Include="Models\DRBeamModels\ComponentWall.cs" />

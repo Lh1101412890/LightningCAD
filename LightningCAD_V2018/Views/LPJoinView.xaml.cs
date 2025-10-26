@@ -174,7 +174,7 @@ namespace LightningCAD.Views
                 }
                 string file = saveFileDialog.FileName;
                 List<string> list = pdfs.Select(p => p.FileName).ToList();
-                Tools.JoinFiles(list, file);
+                PDFHelper.JoinFiles(list, file);
                 Process.Start("Explorer", "/select," + file);
                 Close();
             }

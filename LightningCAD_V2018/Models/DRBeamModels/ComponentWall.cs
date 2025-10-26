@@ -3,7 +3,6 @@
 using Autodesk.AutoCAD.DatabaseServices;
 
 using LightningCAD.Extension;
-using LightningCAD.LightningExtension;
 
 namespace LightningCAD.Models.DRBeamModels
 {
@@ -16,7 +15,7 @@ namespace LightningCAD.Models.DRBeamModels
         private ComponentWall(Line line1, Line line2)
         {
             Width = Math.Round(line1.GetDistance(line2));
-            Tools.GetCenterLine(line1, line2, out Line line);
+            line1.GetCenterLine(line2, out Line line);
             Line = line;
         }
 

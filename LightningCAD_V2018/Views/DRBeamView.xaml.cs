@@ -377,7 +377,7 @@ namespace LightningCAD.Views
                 {
                     for (int j = i + 1; j < components.Count; j++)
                     {
-                        if (Tools.TryExtend(components[i].Line, components[j].Line, out Line line, LightningTolerance.Structural))
+                        if (components[i].Line.TryExtend(components[j].Line, out Line line, LightningTolerance.Structural))
                         {
                             components[i].Line.Dispose();
                             components[i].Line = line;
@@ -406,7 +406,7 @@ namespace LightningCAD.Views
                 int n = -1;
                 for (int j = i + 1; j < lines.Count; j++)
                 {
-                    if (Tools.IsParallelUnion(lines[i], lines[j]))
+                    if (lines[i].IsParallelUnion(lines[j]))
                     {
                         double width = lines[i].GetDistance(lines[j]);
                         if (width > 140 && width <= max && width < dis)

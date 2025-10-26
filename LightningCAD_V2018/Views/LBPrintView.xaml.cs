@@ -725,7 +725,7 @@ namespace LightningCAD.Views
                 if (single.SelectedIndex == 0)
                 {
                     string file = $"{directory.FullName}\\{name}.pdf";
-                    Tools.JoinFiles(files, file);
+                    PDFHelper.JoinFiles(files, file);
                     foreach (string item in files)
                     {
                         File.Delete(item);

@@ -198,11 +198,11 @@
     <Compile Include="..\LightningCAD_V2018\LightningExtension\LightningTolerance.cs">
       <Link>LightningExtension\LightningTolerance.cs</Link>
     </Compile>
+    <Compile Include="..\LightningCAD_V2018\LightningExtension\PDFHelper.cs">
+      <Link>LightningExtension\PDFHelper.cs</Link>
+    </Compile>
     <Compile Include="..\LightningCAD_V2018\LightningExtension\TextSpecialSymbol.cs">
       <Link>LightningExtension\TextSpecialSymbol.cs</Link>
-    </Compile>
-    <Compile Include="..\LightningCAD_V2018\LightningExtension\Tools.cs">
-      <Link>LightningExtension\Tools.cs</Link>
     </Compile>
     <Compile Include="..\LightningCAD_V2018\Models\DragLine.cs">
       <Link>Models\DragLine.cs</Link>

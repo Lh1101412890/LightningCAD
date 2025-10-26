@@ -277,7 +277,7 @@ namespace LightningCAD.Views
                     int n = -1;
                     for (int j = i + 1; j < lines1.Count; j++)
                     {
-                        if (Tools.IsParallelUnion(lines1[i], lines1[j]))
+                        if (lines1[i].IsParallelUnion(lines1[j]))
                         {
                             double width = lines1[i].GetDistance(lines1[j]);
                             if (width > 150 && width < 500 && width < dis)
@@ -310,7 +310,7 @@ namespace LightningCAD.Views
                     int n = -1;
                     for (int j = i + 1; j < lines2.Count; j++)
                     {
-                        if (Tools.IsParallelUnion(lines2[i], lines2[j]))
+                        if (lines2[i].IsParallelUnion(lines2[j]))
                         {
                             double width = lines2[i].GetDistance(lines2[j]);
                             if (width > 150 && width < 500 && width < dis)
@@ -343,7 +343,7 @@ namespace LightningCAD.Views
                     int n = -1;
                     for (int j = i + 1; j < lines3.Count; j++)
                     {
-                        if (Tools.IsParallelUnion(lines3[i], lines3[j]))
+                        if (lines3[i].IsParallelUnion(lines3[j]))
                         {
                             double width = lines3[i].GetDistance(lines3[j]);
                             if (width > 150 && width < 500 && width < dis)
@@ -381,7 +381,7 @@ namespace LightningCAD.Views
                     {
                         if (!Walls[j].IsValid) continue;
                         Line line2 = new Line(Walls[j].StartPoint.ToPoint3d(0), Walls[j].EndPoint.ToPoint3d(0));
-                        if (Tools.TryExtend(line1, line2, out Line line, LightningTolerance.Structural))
+                        if (line1.TryExtend(line2, out Line line, LightningTolerance.Structural))
                         {
                             Walls[i].StartPoint = line.StartPoint.ToPoint2d();
                             Walls[i].EndPoint = line.EndPoint.ToPoint2d();

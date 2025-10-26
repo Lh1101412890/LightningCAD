@@ -69,7 +69,7 @@ namespace LightningCAD.Views
                 return;
             }
             string dir = folderBrowserDialog.SelectedPath;
-            Tools.Split(file.Text, dir);
+            PDFHelper.Split(file.Text, dir);
             Process.Start("Explorer", dir);
         }
     }

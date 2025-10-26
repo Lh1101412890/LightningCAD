@@ -88,8 +88,8 @@
 		<Compile Include="..\LightningCAD_V2018\LightningExtension\Information.cs" Link="LightningExtension\Information.cs" />
 		<Compile Include="..\LightningCAD_V2018\LightningExtension\LayerName.cs" Link="LightningExtension\LayerName.cs" />
 		<Compile Include="..\LightningCAD_V2018\LightningExtension\LightningTolerance.cs" Link="LightningExtension\LightningTolerance.cs" />
+		<Compile Include="..\LightningCAD_V2018\LightningExtension\PDFHelper.cs" Link="LightningExtension\PDFHelper.cs" />
 		<Compile Include="..\LightningCAD_V2018\LightningExtension\TextSpecialSymbol.cs" Link="LightningExtension\TextSpecialSymbol.cs" />
-		<Compile Include="..\LightningCAD_V2018\LightningExtension\Tools.cs" Link="LightningExtension\Tools.cs" />
 		<Compile Include="..\LightningCAD_V2018\Models\DragLine.cs" Link="Models\DragLine.cs" />
 		<Compile Include="..\LightningCAD_V2018\Models\DragRectangle.cs" Link="Models\DragRectangle.cs" />
 		<Compile Include="..\LightningCAD_V2018\Models\DRBeamModels\ComponentBase.cs" Link="Models\DRBeamModels\ComponentBase.cs" />

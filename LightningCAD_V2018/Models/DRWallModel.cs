@@ -40,7 +40,7 @@ namespace LightningCAD.Models
             };
             Width = line1.GetDistance(line2);
 
-            Tools.GetCenterLine(line1, line2, out Line line);
+            line1.GetCenterLine(line2, out Line line);
             StartPoint = line.StartPoint.ToPoint2d();
             EndPoint = line.EndPoint.ToPoint2d();
         }
