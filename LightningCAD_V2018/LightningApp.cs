@@ -5,6 +5,7 @@ using Autodesk.AutoCAD.DatabaseServices;
 using Autodesk.AutoCAD.EditorInput;
 using Autodesk.AutoCAD.Geometry;
 using Autodesk.AutoCAD.Runtime;
+using Autodesk.AutoCAD.Windows;
 using Autodesk.Windows;
 
 using Lightning.Extension;
@@ -42,8 +43,10 @@ namespace LightningCAD
         public void Initialize()
         {
             if (!IsGod)
+            {
                 ShowMsg("Lightning插件作者：【不要干施工】，点击去b站充电，插件群：785371506！", 25);
-
+                CADApp.MainWindow.WindowState = Window.State.Maximized;
+            }
             // 事件存在就不会被其他插件初始化删掉（此事件会打开多次）
             ComponentManager.ItemInitialized += LRibbon_ItemInitialized;
             CADApp.DocumentManager.DocumentCreated += DocumentManager_DocumentCreated;

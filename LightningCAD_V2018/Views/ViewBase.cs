@@ -66,10 +66,7 @@ namespace LightningCAD.Views
         private void DocumentManager_DocumentActivationChanged(object sender, DocumentActivationChangedEventArgs e) => KeepCurrentDocument();
 
         // 文档即将关闭时先关闭窗口，避免异常
-        private void Document_BeginDocumentClose(object sender, DocumentBeginCloseEventArgs e)
-        {
-            Close();
-        }
+        private void Document_BeginDocumentClose(object sender, DocumentBeginCloseEventArgs e) => Close();
 
         private void ViewBase_Closed(object sender, EventArgs e)
         {
@@ -90,7 +87,6 @@ namespace LightningCAD.Views
             CADApp.MainWindow.Handle.Focus();
             Activated -= ViewBase_Activated;
         }
-        //鼠标离开窗口时，焦点切回CAD
         private void ViewBase_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e) => CADApp.MainWindow.Handle.Focus();
 
         public void StartListen()
