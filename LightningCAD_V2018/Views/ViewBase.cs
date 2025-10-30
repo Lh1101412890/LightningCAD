@@ -100,7 +100,7 @@ namespace LightningCAD.Views
             k_hook.KeyDownEvent -= myKeyEventHandeler;//取消按键事件
             k_hook.Stop();
         }
-        private KeyEventHandler myKeyEventHandeler;//按键钩子事件处理器
+        private KeyEventHandler myKeyEventHandeler; //按键钩子事件处理器
         private readonly KeyboardHook k_hook = new KeyboardHook();
         private void Hook_KeyDown(object sender, KeyEventArgs e)
         {
