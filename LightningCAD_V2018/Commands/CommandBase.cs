@@ -29,7 +29,7 @@ namespace LightningCAD.Commands
             {
                 string command = ribbonButton.CommandParameter.ToString() + "\n";//命令参数
                 Document document = CADApp.DocumentManager.MdiActiveDocument;
-                document.SendStringToExecute(command, true, false, false);
+                document.SendStringToExecute(command, true, false, true);
                 document.Editor.WriteMessage(command);
             }
         }

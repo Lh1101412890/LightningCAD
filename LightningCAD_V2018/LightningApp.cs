@@ -25,6 +25,13 @@ namespace LightningCAD
 {
     public class LightningApp : IExtensionApplication
     {
+        private static bool IsGod => PCInfo.IsGod;
+        private static RibbonTab Tab { get; set; }
+        /// <summary>
+        /// CAD工作目录，第一个打开文档所在的目录，会在此处生成打印日志文件
+        /// </summary>
+        public static string Dir { get; private set; } = "";
+
         /// <summary>
         /// 显示消息
         /// </summary>
@@ -32,13 +39,6 @@ namespace LightningCAD
         /// <param name="time">显示时长</param>
         /// <param name="always">是否一直显示</param>
         public static void ShowMsg(string msg, int time = 0, bool always = false) => Information.God.ShowMessage(msg, time, always);
-
-        private static bool IsGod => PCInfo.IsGod;
-
-        /// <summary>
-        /// CAD工作目录，第一个打开文档所在的目录，会在此处生成打印日志文件
-        /// </summary>
-        public static string Dir { get; private set; } = "";
 
         public void Initialize()
         {
@@ -53,6 +53,15 @@ namespace LightningCAD
             // 事件存在就不会被其他插件初始化删掉（此事件会打开多次）
             ComponentManager.ItemInitialized += LRibbon_ItemInitialized;
             CADApp.DocumentManager.DocumentCreated += DocumentManager_DocumentCreated;
+        }
+
+        public void Terminate()
+        {
+            //关闭消息窗口
+            foreach (var item in Process.GetProcessesByName("LightningMessage"))
+            {
+                item.Kill();
+            }
         }
 
         private void DocumentManager_DocumentCreated(object sender, Autodesk.AutoCAD.ApplicationServices.DocumentCollectionEventArgs e)
@@ -86,19 +95,7 @@ namespace LightningCAD
                 }
             }
         }
-
-        public void Terminate()
-        {
-            //关闭消息窗口
-            foreach (var item in Process.GetProcessesByName("LightningMessage"))
-            {
-                item.Kill();
-            }
-        }
-
         private void LRibbon_ItemInitialized(object sender, RibbonItemEventArgs e) => CreateRibbon();
-
-        private static RibbonTab Tab { get; set; }
 
         [CommandMethod("LRibbon")]
         public static void CreateRibbon()
